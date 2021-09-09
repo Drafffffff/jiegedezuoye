@@ -1,0 +1,146 @@
+@font-face {
+  font-family: "bitfont";
+  src: url("./assets/DinkieBitmap-7pxDemo.woff2");
+}
+@mixin button {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 8rem;
+  height: 4rem;
+  background-color: #cdbe95;
+  cursor: pointer;
+  &:hover {
+    & > span {
+      font-size: 1.5rem;
+    }
+  }
+}
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #f7eac8;
+  font-family: "bitfont";
+  user-select: none;
+  .title {
+    text-align: center;
+    margin-top: 10vh;
+    font-size: 3rem;
+  }
+  .container {
+    width: 100vw;
+    height: 80vh;
+    .button-container {
+      display: flex;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+      .btn-webcam {
+        width: 30rem;
+        height: 15rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #cdbe95;
+        cursor: pointer;
+        p {
+          margin: auto;
+          text-align: center;
+          font-size: 1.5rem;
+        }
+        &:hover {
+          & > p {
+            font-size: 2rem;
+          }
+        }
+      }
+      .btn-upload {
+        margin-left: 1rem;
+        width: 30rem;
+        height: 15rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #cdbe95;
+        cursor: pointer;
+        inpu {
+          font-family: "bitfont";
+        }
+      }
+    }
+  }
+
+  .wcpanel {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: #eee4c9;
+    top: 0;
+    left: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .takephotobtn {
+      @include button();
+    }
+  }
+
+  .resultpanel {
+    $padding: 10rem;
+    position: absolute;
+    height: calc(100vh - #{$padding} * 2);
+    width: calc(100vw - #{$padding} * 2);
+    background-color: #eee4c9;
+    top: 0;
+    left: 0;
+    display: none;
+
+    padding: $padding;
+    padding-top: $padding - 2rem;
+    padding-bottom: $padding + 2rem;
+    .title{
+      margin-top: 0;
+    }
+    .left {
+      float: left;
+      margin-left: 30%;
+      .coo {
+        width: 200px;
+        height: 200px;
+        background-color: #fff;
+        margin: auto;
+        // margin-right: 0;
+        .tables {
+          margin-top: 20px;
+          & > div:first-child {
+            font-size: 1.5rem;
+          }
+        }
+        .btn {
+          @include button();
+        }
+      }
+    }
+
+    .right {
+      margin-right: 20%;
+      float: right;
+      .coo {
+        img {
+          width: 400px;
+        }
+        background-color: #fff;
+      }
+      .btn {
+        @include button();
+      }
+    }
+    .buttons {
+      bottom: 0;
+    }
+  }
+}

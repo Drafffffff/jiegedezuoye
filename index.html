@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;"
+      name="viewport"
+    />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <h1 class="title">测一测你的良者形象</h1>
+    <div class="container">
+      <div class="button-container">
+        <div class="btn-webcam"><p>拍一张</p></div>
+        <div class="btn-upload">
+          <p>
+            <input
+              id="fileupload"
+              type="file"
+              class="form-control"
+              name="file"
+              onchange="handleFiles(this.files)"
+            />
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="wcpanel">
+      <div id="webcam-container"></div>
+      <div class="takephoto takephotobtn"><span>拍摄</span></div>
+      <div class="retakephoto takephotobtn">
+        <span>重拍</span>
+      </div>
+      <div class="takephotook takephotobtn">
+        <span>可以了</span>
+      </div>
+    </div>
+
+    <div class="resultpanel">
+      <h1 class="title">五千年前你在良渚的身份竟然是……</h1>
+      <div class="left">
+        <div class="coo">
+          <div id="reslutphoto"></div>
+          <h1>照片特征</h1>
+          <div class="tables"></div>
+
+          <div class="retry btn"><p>再测一次</p></div>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="coo">
+          <img id="final" src="" alt="photo" />
+        </div>
+        <div class="download btn"><p>下载身份</p></div>
+      </div>
+    </div>
+    <!-- p5 -->
+    <!-- <script src="./libs/p5.min.js"></script>
+    <script src="./libs/p5.sound.min.js"></script> -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- <script src="./libs/jquery.slim.min.js"></script> -->
+    <!-- <script src="./libs/zepto.min.js"></script> -->
+    <script src="./libs/tf.min.js"></script>
+    <script src="./libs/teachablemachine-image.min.js"></script>
+    <!-- ml5 -->
+    <!-- <script src="./libs/ml5.min.js"></script> -->
+
+    <script src="./script.js"></script>
+  </body>
+</html>

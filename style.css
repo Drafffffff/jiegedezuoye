@@ -1,0 +1,225 @@
+@font-face {
+  font-family: "bitfont";
+  src: url("./assets/DinkieBitmap-7pxDemo.woff2");
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #f7eac8;
+  font-family: "bitfont";
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+body .title {
+  text-align: center;
+  margin-top: 10vh;
+  font-size: 3rem;
+}
+
+body .container {
+  width: 100vw;
+  height: 80vh;
+}
+
+body .container .button-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .container .button-container .btn-webcam {
+  width: 30rem;
+  height: 15rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #cdbe95;
+  cursor: pointer;
+}
+
+body .container .button-container .btn-webcam p {
+  margin: auto;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+body .container .button-container .btn-webcam:hover > p {
+  font-size: 2rem;
+}
+
+body .container .button-container .btn-upload {
+  margin-left: 1rem;
+  width: 30rem;
+  height: 15rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #cdbe95;
+  cursor: pointer;
+}
+
+body .container .button-container .btn-upload inpu {
+  font-family: "bitfont";
+}
+
+body .wcpanel {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background-color: #eee4c9;
+  top: 0;
+  left: 0;
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body .wcpanel .takephotobtn {
+  margin-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 8rem;
+  height: 4rem;
+  background-color: #cdbe95;
+  cursor: pointer;
+}
+
+body .wcpanel .takephotobtn:hover > span {
+  font-size: 1.5rem;
+}
+
+body .resultpanel {
+  position: absolute;
+  height: calc(100vh - 10rem * 2);
+  width: calc(100vw - 10rem * 2);
+  background-color: #eee4c9;
+  top: 0;
+  left: 0;
+  display: none;
+  padding: 10rem;
+  padding-top: 8rem;
+  padding-bottom: 12rem;
+}
+
+body .resultpanel .title {
+  margin-top: 0;
+}
+
+body .resultpanel .left {
+  float: left;
+  margin-left: 30%;
+}
+
+body .resultpanel .left .coo {
+  width: 200px;
+  height: 200px;
+  background-color: #fff;
+  margin: auto;
+}
+
+body .resultpanel .left .coo .tables {
+  margin-top: 20px;
+}
+
+body .resultpanel .left .coo .tables > div:first-child {
+  font-size: 1.5rem;
+}
+
+body .resultpanel .left .coo .btn {
+  margin-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 8rem;
+  height: 4rem;
+  background-color: #cdbe95;
+  cursor: pointer;
+}
+
+body .resultpanel .left .coo .btn:hover > span {
+  font-size: 1.5rem;
+}
+
+body .resultpanel .right {
+  margin-right: 20%;
+  float: right;
+}
+
+body .resultpanel .right .coo {
+  background-color: #fff;
+}
+
+body .resultpanel .right .coo img {
+  width: 400px;
+}
+
+body .resultpanel .right .btn {
+  margin-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 8rem;
+  height: 4rem;
+  background-color: #cdbe95;
+  cursor: pointer;
+}
+
+body .resultpanel .right .btn:hover > span {
+  font-size: 1.5rem;
+}
+
+body .resultpanel .buttons {
+  bottom: 0;
+}
+/*# sourceMappingURL=style.css.map */
