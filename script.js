@@ -35,17 +35,17 @@ const imgUrls = {
   ],
   "nv-cf": [
     "./assets/jieguo/nv-cf/cf.png",
-    "./assets/jieguo/mv-cf/cf2.png",
-    "./assets/jieguo/mv-cf/cf 3.png",
-    "./assets/jieguo/mv-cf/cf 4.png",
-    "./assets/jieguo/mv-cf/cf 5.png",
+    "./assets/jieguo/nv-cf/cf2.png",
+    "./assets/jieguo/nv-cf/cf 3.png",
+    "./assets/jieguo/nv-cf/cf 4.png",
+    "./assets/jieguo/nv-cf/cf 5.png",
   ],
   "nv-zcf": [
     "./assets/jieguo/nv-zcf/zcf.png",
-    "./assets/jieguo/mv-zcf/zcf2.png",
-    "./assets/jieguo/mv-zcf/zcf3.png",
-    "./assets/jieguo/mv-zcf/zcf4.png",
-    "./assets/jieguo/mv-zcf/zcf5.png",
+    "./assets/jieguo/nv-zcf/zcf2.png",
+    "./assets/jieguo/nv-zcf/zcf3.png",
+    "./assets/jieguo/nv-zcf/zcf4.png",
+    "./assets/jieguo/nv-zcf/zcf5.png",
   ],
 };
 let model, webcam, labelContainer, maxPredictions;
@@ -189,24 +189,27 @@ function downloadImage(src) {
   const $a = $("<a></a>").attr("href", src).attr("download", "你的身份.png");
   $a[0].click();
 }
+let reader = new FileReader();
+let img = new Image();
+const canvas = document.createElement("canvas");
+canvas.width = 200;
+canvas.height = 200;
+document
+  .getElementById("fileupload")
+  .addEventListener("change", async function (event) {
+    reader.readAsDataURL(event.target.files[0]);
+  });
+reader.onload = async function (e) {
+  img.src = e.target.result;
+};
 
-async function handleFiles(files) {
-  var file = files[0];
-  var imageType = /^image\//;
-  if (!imageType.test(file.type)) {
-    return;
-  }
-  var img = document.createElement("img");
-  img.classList.add("obj");
-  img.file = file;
-  var reader = new FileReader();
-  reader.onload = (function (aImg) {
-    return function (e) {
-      aImg.src = e.target.result;
-    };
-  })(img);
-  reader.readAsDataURL(file);
-
+img.onload = async function () {
+  console.log(img.width);
+  console.log(img.height);
+  let ctx = canvas.getContext("2d");
+  ctx.drawImage(img, 0, 0, 200, 200);
+  $("#reslutphoto").append(img);
+  $("#reslutphoto>img").attr("height", "200");
   const prediction = await predict(img);
   console.log(prediction);
   let max = 0;
@@ -217,7 +220,6 @@ async function handleFiles(files) {
       maxid = i;
     }
   }
-
   let url = imgUrls[tags[maxid]][Math.floor(Math.random() * 5)];
   $("#final").attr("src", url);
   console.log(maxid);
@@ -235,14 +237,6 @@ async function handleFiles(files) {
           prediction[i].probability * 100 +
           '%; height: 20px; background-color: #B5A572;"></div>'
       );
-
-    // const classPrediction =
-    //   prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-    // labelContainer.childNodes[i].innerHTML = classPrediction;
   }
-  $("#reslutphoto").append(img);
-  $("#reslutphoto>img").attr("height", "200");
-
-  // addCanvas("reslutphoto");
   $(".resultpanel").show();
-}
+};
